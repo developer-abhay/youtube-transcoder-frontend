@@ -65,7 +65,6 @@ export function AppSidebar() {
                 </SidebarGroup>
             </SidebarContent>
             <SidebarFooter>
-                {/* <SidebarMenu> */}
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
