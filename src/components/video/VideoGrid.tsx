@@ -1,9 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import VideoCard from "./VideoCard"
 
@@ -122,7 +119,7 @@ const dummyVideos = [
 ]
 
 export function VideoGrid() {
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage] = useState(1)
     const [selectedCategory, setSelectedCategory] = useState("All")
 
     const filteredVideos =
@@ -131,7 +128,7 @@ export function VideoGrid() {
             : dummyVideos.filter((video) => video.category === selectedCategory)
 
     const videosPerPage = 8
-    const totalPages = Math.ceil(filteredVideos.length / videosPerPage)
+    // const totalPages = Math.ceil(filteredVideos.length / videosPerPage)
     const startIndex = (currentPage - 1) * videosPerPage
     const endIndex = startIndex + videosPerPage
     const currentVideos = filteredVideos.slice(startIndex, endIndex)
@@ -155,7 +152,7 @@ export function VideoGrid() {
                     <TabsContent key={category} value={category}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             {currentVideos.map((video) => (
-                                <VideoCard video={video} />
+                                <VideoCard video={video} key={video.id} />
                             ))}
                         </div>
                     </TabsContent>

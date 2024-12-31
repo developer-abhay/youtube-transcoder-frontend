@@ -45,7 +45,7 @@ export function Navbar() {
                         </Avatar>
                     </>
                 ) : (
-                    <Button>Sign In </Button>
+                    <Button onClick={() => { setIsLoggedIn(true) }}>Sign In </Button>
                 )}
             </div>
         </nav>

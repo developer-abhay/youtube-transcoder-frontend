@@ -26,7 +26,7 @@ const VideoCard: React.FC<{ video: VideoCardProps }> = ({ video }) => {
                     className="w-full h-48 object-cover  rounded-lg"
                 />
                 <div className="p-2 pl-0 flex gap-2">
-                    <Avatar>
+                    <Avatar className="w-6 h-6">
                         <AvatarImage src="https://github.com/shadcn.png" />
                         <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
